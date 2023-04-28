@@ -38,7 +38,7 @@
       const canvas = Quagga.canvas.dom.overlay;
       ctx.clearRect(0, 0, parseInt(canvas.width), parseInt(canvas.height));
       Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, ctx, {color: "blue", lineWidth: 5});
-    }
+    });
     
     Quagga.onDetected((result) => {
       var code = result.codeResult.code;
