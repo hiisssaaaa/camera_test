@@ -24,10 +24,7 @@
   <script src="./js/quaggaJS/dist/quagga.js"></script>
   <script>
     Quagga.init({
-      inputStream: { type : 'LiveStream', constraints:{
-                                          width: 640px,
-                                          height: 480px
-                                          } },
+      inputStream: { type : 'LiveStream', constraints : {width: 640,height: 480} },
         decoder: {
           readers: [{
             format: 'code_39_reader',
