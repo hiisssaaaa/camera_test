@@ -1,10 +1,28 @@
 <html>
-<head>
-</head>
+<script type="text/javascript" src="https://serratus.github.io/quaggaJS/examples/js/quagga.min.js"></script>
 <body>
-	<div>
-		申込番号<input class="moban" type="text">
-		<input type="file" capture="environment" accept="image/*">
-	</div>
+  <div id="interactive" class="viewport"></div>
+
+  <script src="./js/quaggaJS/dist/quagga.js"></script>
+  <script>
+    Quagga.init({
+      inputStream: { type : 'LiveStream' },
+        decoder: {
+          readers: [{
+            format: 'ean_reader',
+            config: {}
+          }]
+        }
+      }, (err) => {
+        if(!err) {
+          Quagga.start();
+        }
+      });
+
+    Quagga.onDetected((result) => {
+      var code = result.codeResult.code;
+      // ここでコードを受け取って、何かしらの処理(例えば、楽天市場APIを使用して商品検索等)
+    });
+  </script>
 </body>
 </html>
