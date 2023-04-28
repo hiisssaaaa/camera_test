@@ -11,7 +11,7 @@
     }
   </style>
   <div id="interactive" class="viewport">
-    <span id="sen1"></span>
+    <!--<span id="sen1"></span>-->
   </div>
 
   <script src="./js/quaggaJS/dist/quagga.js"></script>
@@ -30,10 +30,7 @@
         }
       });
 
-    Quagga.onProcessed((result) => {
-      if(result == null) return;
-      if(typeof(result) !="object") return;
-      if(result.boxes == underfined) return;
+    Quagga.onProcessed(result=> {
       const ctx = Quagga.canvas.ctx.overlay;
       const canvas = Quagga.canvas.dom.overlay;
       ctx.clearRect(0, 0, parseInt(canvas.width), parseInt(canvas.height));
