@@ -7,6 +7,11 @@
       width: 300px;
       height: 200px;
     }
+    .viewport canvas, video {
+      border: 4px solid red;
+      width: 300px;
+      height: 200px;
+    }
   </style>
   <div id="interactive" class="viewport">
     <!--<span id="sen1"></span>-->
@@ -28,12 +33,12 @@
         }
       });
 
-    /*Quagga.onProcessed(result=> {
+    Quagga.onProcessed(result=> {
       const ctx = Quagga.canvas.ctx.overlay;
       const canvas = Quagga.canvas.dom.overlay;
       ctx.clearRect(0, 0, parseInt(canvas.width), parseInt(canvas.height));
       Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, ctx, {color: "blue", lineWidth: 5});
-    });*/
+    });
     
     Quagga.onDetected((result) => {
       var code = result.codeResult.code;
